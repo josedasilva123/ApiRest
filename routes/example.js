@@ -2,7 +2,7 @@ const router = require("express").Router();
 const jwt = require('jsonwebtoken');
 const MongoDBConnect = require("../database/connect");
 
-//Exemplo de middleware de authenticação
+//Exemplo de middleware de autenticação
 async function authenticateExample(req, res, next) {
   const token = req.headers["auth"];
   // token vem de headers: auth //
