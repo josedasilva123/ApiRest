@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "xenon-petal-350411",
+  "private_key_id": "e5ac5e90b4888641203851bef209a2f7a3b130f6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCWhX72hVhtln2A\nPOy3kieXsBGdUrZwQ6g+y1CCK39s2rqGVg2XgCN3CAWMAWZD16FSFTYiWQ7uJqZD\nADVk+oG8kBK/FJ/J1cZIXh3xVOfXanjpZHSNw9C8nMCV6xxocoTQjm3d2rN8AI0R\n25/gjBXiohQCilXSxXj9O80uP3PEugcMXUQOkAUt3E/ZnlqgFyphEyHEJIIaoVtW\nlycplwQmonU1eg0cozne90j7dvXUsIXDCbPt7or7IqUpDYId+aruevXjsIPfYqwD\ntuwDRMpu3rDpMmoM8ZRvnzd1bNAutnrfkvzR3SeaiZ3nFwOhrju3Bm1kdj6LO9cw\ndA2ZBm5LAgMBAAECggEAALJqNNsc+uzq5klwJrSNUGDRxA9E+2zBNzoa4P2jPC5Z\nToW0JUvECPBHWPZ+eUd/UEbCa/aDmb0hoQ4C2/IOUitMmuvjafVFi96td7QI06m7\n/HmMtX5wuRe70lJTXMqqD+BB1qM+Qw9/0JqTKwsbAQ7aZDLXjVTWS1pQwQCe4EUU\noz8PPnNlCEhExUYRpg6L3W4jR9Lh3sQ9xVLdh6dVAuWhwXWNzrB8QMoff+JmVY/P\nvS8F6Y93fcGNFe6HlkCADOheTnHYFx1B09F/QBqCaT2o9wGjOf+w9pNOk7BritV8\n+QDlpeOkMn6D4Mz0sIMOfRBxjoSo7Vfyka6Xp2YR8QKBgQDKe668ezJReNltAs8w\no2J6/7+oH/xE6Qg+FvnzAOYMTqwi86x0j/MpaTkb+/Z8PgKrX2uGLSGSa8LfCPHU\nxnojic64BtxwnGlDHMabF7rfKFoPopXiPGohSmha5M2dcxPiRaSA9ODPvdhRVSbw\ngzfrnfT9GaHJOiGfTJFXA8ELEwKBgQC+TgIDEUfUCcc5RvZRiE4zekIYp3z0p7VY\nS7tq1uFWs4SI1G4h89WbtgLsZ+r3CxK+RYqBoCQari2p4LDAphJBfsD292q6/rh/\nhe1CKkPWTR0QEzQAw0mdSktbBYQxlM05CrcY3j3LI80zRoZMj6GepIO+mKM+qhKD\nAY7opaB+6QKBgQCTYISlcXIFdNWkj5foifNDHWUNZQKD0a2LK8QPyEapDJYj9oI+\ncQwGxyynHrSgZ64fuBsWFUFLRp4XInaKbVA3D7XjojLO0DmZfJdeCV6d0MwEd01q\n1phU1Mix57l08W62kgQTTKlY65BIWpc2FfwcxeKsWfy071fLj7p1wCjA+wKBgQCB\nzTloGDhS81x0v+cwk3UrfX9py4vaYC28DOPHqstGVOnYXnTEKcmQDKSP1Q2Z9W6S\nY2JmqfEWVamFzmEg9eVL0QYTLY0aALWdHZ9H2wYsPKrPFRoKTyl95HfjnK6fFuyn\ntJxQlP22+jNzfu4JeIp3Z6UIspneGyjHPJ/aJWaESQKBgQCIm/NZ/PGpxtdeWldr\nzeldpVRLJtI2Irqoll3JcDOs8PnNLc1Aj8bzKaQQTpeKv4PXLz6/B3uf1x/a8/6J\njMmpFntQ7HSJRquCsaZXvJj4VJwchnZDuPfB3s4ROyfSkrgyHN6Fu2sniM9Xffiu\n2ge/iV7yKolKhUv/ohA9ZLKi4g==\n-----END PRIVATE KEY-----\n",
+  "client_email": "portfolio@xenon-petal-350411.iam.gserviceaccount.com",
+  "client_id": "115208706341709016874",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/portfolio%40xenon-petal-350411.iam.gserviceaccount.com"
+}

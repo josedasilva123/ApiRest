@@ -8,13 +8,15 @@ app.use(
         extended: true,
     })
 )
-
 app.use(express.json());
 
-const exampleRoutes = require('./routes/example');
+//const exampleRoutes = require('./routes/example');
 
-app.use('/example', exampleRoutes);
+const googleSheets = require('./routes/googlesheets')
+
+//app.use('/example', exampleRoutes);
+app.use('/sheets', googleSheets);
 
 app.listen(3030, 'localhost', () => {
-    console.log('[SERVER] Api started width sucess!')
-} );
+    console.log('[SERVER] API iniciou com sucesso!')
+});
