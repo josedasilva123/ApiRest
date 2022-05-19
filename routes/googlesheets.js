@@ -74,29 +74,71 @@ router.post("/rows", async (req, res) => {
 
     const { googleSheets, auth, spreadsheetId } = await getAuthSheets();
 
-    const newRow = googleSheets.spreadsheets.values.append({
+    const values = [
+      [
+        text,
+        name,
+        'no',
+      ]
+    ]
+    const requestBody = {
+      values,
+    }
+    //New row
+    googleSheets.spreadsheets.values.append({
       auth,
       spreadsheetId,
       range: collection, 
       valueInputOption: "USER_ENTERED",
-      requestBody: {
-        text,
-        name,
-        approved: 'no',
-      }
+      requestBody,
     })
+
     res.status(200).send({ message: "Linha inserida com sucesso!" });
   } catch (error) {
     res.status(400).send({ error: error.message });  
   }
 });
 
-router.patch("/", async (req, res) => {
-  res.status(200).send({ message: "Fez um PATCH" });
+router.put("/rows", async (req, res) => {
+  try {
+    const { text, name, index, collection } = req.body;
+
+    if(!text || !name || !index || !collection){
+      throw new Error("Desculpe, está faltando algum parâmetro no body.")
+    }
+
+    const { googleSheets, auth, spreadsheetId } = await getAuthSheets();
+
+    const values = [
+      [
+        text,
+        name,
+        'no',
+      ]
+    ]
+    
+    const requestBody = {
+      values,
+    }
+    //Update Row
+    const updateValue = await googleSheets.spreadsheets.values.update({
+      auth,
+      spreadsheetId,
+      range: `${collection}!A${index}:C${index}`, 
+      valueInputOption: "USER_ENTERED",
+      requestBody,
+    })
+
+    res.status(200).send(updateValue);
+  } catch (error) {
+    res.status(400).send({ error: error.message });  
+  }
 });
 
+/*
 router.delete("/", async (req, res) => {
   res.status(200).send({ message: "Fez um DELETE" });
 });
+*/
 
 module.exports = router;
