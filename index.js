@@ -20,6 +20,6 @@ const googleSheets = require('./routes/googlesheets')
 //app.use('/example', exampleRoutes);
 app.use('/sheets', googleSheets);
 
-app.listen(port, 'localhost', () => {
+app.listen(port, () => {
     console.log('[SERVER] API iniciou com sucesso!')
 });
