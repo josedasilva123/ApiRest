@@ -4,7 +4,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 router.post("/send", async (req, res) => {
   try {
-    const { emailFrom, emailTo, name, message } = req.body;
+    const { emailTo, name, message } = req.body;
 
     if (!emailFrom || !emailTo || !name) {
       throw new Error("Desculpe, está faltando algum parâmetro no body.");
@@ -12,7 +12,7 @@ router.post("/send", async (req, res) => {
     
     //Estruturação da mensagem
     const msg = {
-      from: emailFrom,
+      from: process.env.SENDGRID_MAIL,
       to: emailTo,
       subject: `Formulário Portfolio: ${name} te mandou uma mensagem.`,
       text: `Alguém entrou em contato com você via formulário`,
