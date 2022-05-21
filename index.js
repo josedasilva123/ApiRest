@@ -16,9 +16,11 @@ app.use(express.json());
 //const exampleRoutes = require('./routes/example');
 
 const googleSheets = require('./routes/googlesheets')
+const formEmail = require('./routes/email')
 
 //app.use('/example', exampleRoutes);
 app.use('/sheets', googleSheets);
+app.use('/email', formEmail);
 
 app.listen(port, () => {
     console.log('[SERVER] API iniciou com sucesso!')

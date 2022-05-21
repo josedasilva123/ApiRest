@@ -1,5 +1,7 @@
 const router = require("express").Router();
 const { google } = require("googleapis");
+const sgMail = require("@sendgrid/mail");
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 async function getAuthSheets() {
   const auth = new google.auth.GoogleAuth({
@@ -28,10 +30,12 @@ async function getAuthSheets() {
 router.get("/meta", async (req, res) => {
   try {
     const { googleSheets, auth, spreadsheetId } = await getAuthSheets();
+
     const metadata = await googleSheets.spreadsheets.get({
       auth,
       spreadsheetId,
     });
+    
     res.status(200).send(metadata.data);
   } catch (error) {
     res.status(400).send({ error: error.message }); 
@@ -81,6 +85,7 @@ router.post("/rows", async (req, res) => {
         'no',
       ]
     ]
+    
     const requestBody = {
       values,
     }
@@ -92,6 +97,31 @@ router.post("/rows", async (req, res) => {
       valueInputOption: "USER_ENTERED",
       requestBody,
     })
+
+    //Email
+    const msg = {
+      from: process.env.SENDGRID_MAIL,
+      to: "alex.conder@nerdweb.com.br",
+      subject: `Novo Depimento: ${name} te mandou um novo depoimento.`,
+      text: `Gerencie sua planilha para aprovaro`,
+      html: `
+        <p>${name} te mandou um novo depoimentos</p>
+        <p><b>Depoimento></b>${text}</p>
+      `,
+    };
+
+    //Estruturação da mensagem
+    await sgMail
+      .send(msg)
+      .then((response) => {
+        res.status(200).send({
+          message: "Sua mensagem foi enviada com sucesso!",
+          data: response,
+        });
+      })
+      .catch((error) => {
+        throw new Error(error.message);
+      });
 
     res.status(200).send({ message: "Linha inserida com sucesso!" });
   } catch (error) {
