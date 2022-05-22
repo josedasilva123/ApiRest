@@ -70,9 +70,9 @@ router.get("/rows/:collection", async (req, res) => {
 
 router.post("/rows", async (req, res) => {
   try {
-    const { text, name, collection } = req.body;
+    const { text, name, title, collection } = req.body;
 
-    if(!text || !name || !collection){
+    if(!text || !name || !title || !collection){
       throw new Error("Desculpe, está faltando algum parâmetro no body.")
     }
 
@@ -82,6 +82,7 @@ router.post("/rows", async (req, res) => {
       [
         text,
         name,
+        title,
         'no',
       ]
     ]
