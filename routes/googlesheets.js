@@ -62,7 +62,19 @@ router.get("/rows/:collection", async (req, res) => {
       throw new Error("Desculpe, nenhuma coleção foi encontrada.");
     }
 
-    res.status(200).send(getRows.data);
+    const rowsData = getRows.data.values;
+    rowsData.shift();
+    
+    const filteredData = rowsData.map(row => {
+      return {
+        text: row[0],
+        name: row[1],
+        title: row[2],
+        approved: row[3],
+      }
+    })    
+
+    res.status(200).send(filteredData);
   } catch (error) {
     res.status(400).send({ error: error.message });
   }
