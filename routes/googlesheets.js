@@ -125,13 +125,7 @@ router.post("/rows", async (req, res) => {
 
     //Estruturação da mensagem
     await sgMail
-      .send(msg)
-      .then((response) => {
-        res.status(200).send({
-          message: "Sua mensagem foi enviada com sucesso!",
-          data: response,
-        });
-      })
+      .send(msg)      
       .catch((error) => {
         throw new Error(error.message);
       });
