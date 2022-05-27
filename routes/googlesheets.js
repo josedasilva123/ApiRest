@@ -84,9 +84,12 @@ router.post("/rows", async (req, res) => {
   try {
     const { text, name, title, collection } = req.body;
 
+    console.log(req.body);
+    
     if(!text || !name || !title || !collection){
       throw new Error("Desculpe, está faltando algum parâmetro no body.")
     }
+    
 
     const { googleSheets, auth, spreadsheetId } = await getAuthSheets();
 

@@ -1,5 +1,8 @@
 require('dotenv').config();
 const express = require('express');
+
+const cors = require('cors');
+
 const app = express();
 
 //Configuração de variável de ambiente para Heroku
@@ -12,6 +15,9 @@ app.use(
     })
 )
 app.use(express.json());
+
+//Resolvendo erros de CORS
+app.use(cors());
 
 //const exampleRoutes = require('./routes/example');
 
