@@ -118,11 +118,11 @@ router.post("/rows", async (req, res) => {
     const msg = {
       from: process.env.SENDGRID_MAIL,
       to: "alex.conder@nerdweb.com.br",
-      subject: `Novo Depimento: ${name} te mandou um novo depoimento.`,
+      subject: `Novo Depoimento: ${name} te mandou um novo depoimento.`,
       text: `Gerencie sua planilha para aprovar`,
       html: `
-        <p>${name} te mandou um novo depoimentos</p>
-        <p><b>Depoimento></b>${text}</p>
+        <p>${name} te mandou um novo depoimento</p>
+        <p><b>Depoimento:</b>${text}</p>
       `,
     };
 
