@@ -4,7 +4,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 router.post("/send", async (req, res) => {
   try {
-    const { emailTo, name, message } = req.body;
+    const { emailTo, name, whatsapp, message } = req.body;
 
     if (!emailTo || !name) {
       throw new Error("Desculpe, está faltando algum parâmetro no body.");
@@ -16,7 +16,7 @@ router.post("/send", async (req, res) => {
       to: emailTo,
       subject: `Formulário Portfolio: ${name} te mandou uma mensagem.`,
       text: `Alguém entrou em contato com você via formulário`,
-      html: message,
+      html: message + " Whatsapp: " + whatsapp,
     };
 
     //Envio do e-mail
