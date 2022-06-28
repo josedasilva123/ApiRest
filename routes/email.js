@@ -6,7 +6,7 @@ router.post("/send", async (req, res) => {
   try {
     const { emailTo, name, whatsapp, message } = req.body;
 
-    if (!emailTo || !name) {
+    if (!emailTo || !name || !whatsapp || !message) {
       throw new Error("Desculpe, está faltando algum parâmetro no body.");
     }
     

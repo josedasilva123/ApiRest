@@ -84,8 +84,6 @@ router.post("/rows", async (req, res) => {
   try {
     const { text, name, title, collection } = req.body;
 
-    console.log(req.body);
-    
     if(!text || !name || !title || !collection){
       throw new Error("Desculpe, está faltando algum parâmetro no body.")
     }
@@ -105,6 +103,7 @@ router.post("/rows", async (req, res) => {
     const requestBody = {
       values,
     }
+    
     //New row
     googleSheets.spreadsheets.values.append({
       auth,

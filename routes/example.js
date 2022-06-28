@@ -9,7 +9,6 @@ async function authenticateExample(req, res, next) {
 
   jwt.verify(token, process.env.JWT_SECRET_KEY , function (err, decoded) {
     if (!err) {
-        // ações antes de prosseguir para requisição
         next();
     } else {
         res.status(400).json({ message: "Ocorreu um erro, a token não é válida!"})
@@ -38,7 +37,9 @@ router.post("/", middlewareExample, async (req, res) => {
 
   console.log(req.body);
   //exemplo jwt
-  jwt.sign({}, process.env.JWT_SECRET_KEY);
+  jwt.sign({
+    id,
+  }, process.env.JWT_SECRET_KEY);
 
   res.status(200).send({ message: "Fez um POST" });
 });
