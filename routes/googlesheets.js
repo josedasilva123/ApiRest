@@ -30,7 +30,6 @@ async function getAuthSheets() {
 router.get("/meta", async (req, res) => {
   try {
     const { googleSheets, auth, spreadsheetId } = await getAuthSheets();
-
     const metadata = await googleSheets.spreadsheets.get({
       auth,
       spreadsheetId,
